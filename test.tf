@@ -21,7 +21,7 @@ resource "aws_instance" "myec2" {
    instance_type = "t2.micro"
    key_name = "practice_instance_keypair"
    tags = {
-      Name = "Apple"
+      Name = "Apple1"
    }
 
 }
