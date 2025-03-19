@@ -8,19 +8,12 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/Mouni7777/jenkins-terraform.git',
-                        credentialsId: 'github-pat'
-                    ]]
-                ])
-            }
-        }
+      stage('fetch_latest_code') {
+        steps {
+        git branch: 'master', url: 'https://github.com/kasturenishant/Jenkins-Terraform.git'
+         }
     }
+
     
       stage('TF Init&Plan') {
         steps {
